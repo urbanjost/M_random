@@ -1,0 +1,19 @@
+function loadthem(){
+append("M_random.3m_random.html");
+append("init_random_seed.3m_random.html");
+append("init_random_seed_by_dat.3m_random.html");
+append("init_random_seed_by_system_clock.3m_random.html");
+append("mtprng_init.3m_random.html");
+append("mtprng_init_by_array.3m_random.html");
+append("mtprng_rand.3m_random.html");
+append("mtprng_rand64.3m_random.html");
+append("mtprng_rand_range.3m_random.html");
+append("mtprng_rand_real1.3m_random.html");
+append("mtprng_rand_real2.3m_random.html");
+append("mtprng_rand_real3.3m_random.html");
+append("random_hex.3m_random.html");
+append("random_int.3m_random.html");
+append("random_kiss64.3m_random.html");
+append("random_string.3m_random.html");
+append("scramble.3m_random.html");
+}
