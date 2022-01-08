@@ -1,6 +1,6 @@
 ## NAME
    M_random(3f) - a module of pseudo random procedures
-   (LICENSE:)
+   (LICENSE: See procedures, primarily MIT)
 ## SYNOPSIS
 ```text
    use M_random, only: init_random_seed_by_system_clock
