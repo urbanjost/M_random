@@ -1,0 +1,10 @@
+'mainpage.txt
+/**
+         @mainpage M_random Fortran Library
+
+         @section Introduction
+
+     M_random - Fortran module of pseudo random values
+
+         @image html html/images/sort.gif
+*/'

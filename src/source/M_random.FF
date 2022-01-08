@@ -9,23 +9,28 @@ NAME
 SYNOPSIS
   See the routines:
 
-   use M_random, only : init_random_seed_by_system_clock, init_random_seed_by_dat, init_random_seed
+   use M_random, only : init_random_seed_by_system_clock, &
+   & init_random_seed_by_dat, init_random_seed
    use M_random, only : random_string, random_hex, random_int
    use M_random, only : random_kiss64
-   use M_random, only : mtprng_state, mtprng_init_array, mtprng_rand64, mtprng_rand_real1
+   use M_random, only : mtprng_state, mtprng_init_array, mtprng_rand64, &
+   & mtprng_rand_real1
    use M_random, only : mtprng_int, mtprng_int_by_array
    use M_random, only : mtprng_rand64, mtprng_rand, mtprng_rand_range
-   use M_random, only : mtprng_rand_real3, mtprng_rand_real2, mtprng_rand_real1
+   use M_random, only : mtprng_rand_real3, mtprng_rand_real2, &
+   & mtprng_rand_real1
    use M_random, only : scramble
 
 QUOTE
 
-  The generation of random numbers is too important to be left to chance -- Robert R. Coveyou
+  The generation of random numbers is too important to be left to chance
+  -- Robert R. Coveyou
 
 DESCRIPTION
 
-   The M_random(3fm) module contains routines to support random number generation. This includes 
-   supplements for the Fortran intrinsic random_seed(3f).
+   The M_random(3fm) module contains routines to support random number
+   generation. This includes supplements for the Fortran intrinsic
+   random_seed(3f).
 
   SUPPLEMENTING INTRINSIC RANDOM_SEED
    o init_random_seed_by_system_clock(3f): initialize random_number(3f) to return a single value with system clock
@@ -153,6 +158,7 @@ character(len=:),allocatable    :: out
    integer                      :: i
    ilen=len(chars)
    out=''
+   call init_random_seed(3f)
    if(ilen.gt.0)then
       do i=1,length
          call random_number(x)
@@ -244,7 +250,8 @@ EXAMPLE
   Sample program
 
    program demo_random_int
-   use M_random, only : random_int
+   use M_random, only : random_int, init_random_seed_by_system_clock
+   call init_random_seed_by_system_clock()
    write(*,'(*(i0:,1x))')(random_int(1,10),i=1,20)
    write(*,'(*(i0:,1x))')(random_int(-5,5),i=1,20)
    end program demo_random_int
@@ -326,7 +333,7 @@ EXAMPLE
   Sample program
 
     program demo_scramble
-    use M_random, only : scramble
+    use M_random, only : scramble, init_random_seed_by_system_clock
     implicit none
     character(len=*),parameter :: list(*)=[character(len=5) :: &
     & 'one','two','three','four','five',&
@@ -334,6 +341,7 @@ EXAMPLE
     integer                    :: i
     integer                    :: n=size(list)
     character(len=len(list))   :: newlist(size(list))
+    call init_random_seed_by_system_clock()
     do i = 1,8
        ! use random values as indices to randomize array
        newlist=list(scramble(n))
