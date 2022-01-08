@@ -3,9 +3,10 @@
 !===================================================================================================================================
 $BLOCK HELP --file rand.1.man
 NAME
-   rand - [FUNIX] generate random permutations of file lines, whole
-   numbers, or strings
+   rand - [FUNIX] generate pseudo-random permutations of file lines, whole
+   numbers, or strings 
    (LICENSE:PD)
+
 SYNOPSIS
   syntax:
 
@@ -14,14 +15,21 @@ SYNOPSIS
    rand -i LO-HI   [ -n]
 
 DESCRIPTION
-   Write a random permutation of the input lines to standard output.
+   Generates pseudo=random permutations, similar to the shuf(1) command.
+   Writes pseudo-random permutations of:
 
+   o the lines in a file 
+   o a range of whole numbers
+   o a list of strings
+
+OPTIONS
    FILES(s)   files to use as input
    -e         treat each ARG as an input line
    -i LO HI   treat each number LO through HI as an input line
    -n         output at most COUNT lines (per file)
    --help     display this help and exit
    --version  output version information and exit
+
 EXAMPLES
   Sample usage:
 
@@ -29,10 +37,13 @@ EXAMPLES
    rand -i 0 100 -n 1
    # randomly select xterm(1) color
    xterm -bg `rand -e green black gray blue -n 1`
+
 AUTHOR
    John S. Urban
+
 LICENSE
    Public Domain
+
 $BLOCK END
 $!@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 $BLOCK VERSION

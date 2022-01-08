@@ -12,9 +12,10 @@ stopit=.false.
 if(l_help)then
 help_text=[ CHARACTER(LEN=128) :: &
 'NAME                                                                                                                            ',&
-'   rand - [FUNIX] generate random permutations of file lines, whole                                                             ',&
+'   rand - [FUNIX] generate pseudo-random permutations of file lines, whole                                                      ',&
 '   numbers, or strings                                                                                                          ',&
 '   (LICENSE:PD)                                                                                                                 ',&
+'                                                                                                                                ',&
 'SYNOPSIS                                                                                                                        ',&
 '  syntax:                                                                                                                       ',&
 '                                                                                                                                ',&
@@ -23,14 +24,21 @@ help_text=[ CHARACTER(LEN=128) :: &
 '   rand -i LO-HI   [ -n]                                                                                                        ',&
 '                                                                                                                                ',&
 'DESCRIPTION                                                                                                                     ',&
-'   Write a random permutation of the input lines to standard output.                                                            ',&
+'   Generates pseudo=random permutations, similar to the shuf(1) command.                                                        ',&
+'   Writes pseudo-random permutations of:                                                                                        ',&
 '                                                                                                                                ',&
+'   o the lines in a file                                                                                                        ',&
+'   o a range of whole numbers                                                                                                   ',&
+'   o a list of strings                                                                                                          ',&
+'                                                                                                                                ',&
+'OPTIONS                                                                                                                         ',&
 '   FILES(s)   files to use as input                                                                                             ',&
 '   -e         treat each ARG as an input line                                                                                   ',&
 '   -i LO HI   treat each number LO through HI as an input line                                                                  ',&
 '   -n         output at most COUNT lines (per file)                                                                             ',&
 '   --help     display this help and exit                                                                                        ',&
 '   --version  output version information and exit                                                                               ',&
+'                                                                                                                                ',&
 'EXAMPLES                                                                                                                        ',&
 '  Sample usage:                                                                                                                 ',&
 '                                                                                                                                ',&
@@ -38,10 +46,13 @@ help_text=[ CHARACTER(LEN=128) :: &
 '   rand -i 0 100 -n 1                                                                                                           ',&
 '   # randomly select xterm(1) color                                                                                             ',&
 '   xterm -bg `rand -e green black gray blue -n 1`                                                                               ',&
+'                                                                                                                                ',&
 'AUTHOR                                                                                                                          ',&
 '   John S. Urban                                                                                                                ',&
+'                                                                                                                                ',&
 'LICENSE                                                                                                                         ',&
 '   Public Domain                                                                                                                ',&
+'                                                                                                                                ',&
 '']
    WRITE(*,'(a)')(trim(help_text(i)),i=1,size(help_text))
    stop ! if --help was specified, stop
@@ -49,9 +60,10 @@ endif
 end subroutine help_usage
 !>
 !!##NAME
-!!    rand - [FUNIX] generate random permutations of file lines, whole
+!!    rand - [FUNIX] generate pseudo-random permutations of file lines, whole
 !!    numbers, or strings
 !!    (LICENSE:PD)
+!!
 !!##SYNOPSIS
 !!
 !!   syntax:
@@ -61,14 +73,21 @@ end subroutine help_usage
 !!    rand -i LO-HI   [ -n]
 !!
 !!##DESCRIPTION
-!!    Write a random permutation of the input lines to standard output.
+!!    Generates pseudo=random permutations, similar to the shuf(1) command.
+!!    Writes pseudo-random permutations of:
 !!
+!!    o the lines in a file
+!!    o a range of whole numbers
+!!    o a list of strings
+!!
+!!##OPTIONS
 !!    FILES(s)   files to use as input
 !!    -e         treat each ARG as an input line
 !!    -i LO HI   treat each number LO through HI as an input line
 !!    -n         output at most COUNT lines (per file)
 !!    --help     display this help and exit
 !!    --version  output version information and exit
+!!
 !!##EXAMPLES
 !!
 !!   Sample usage:
@@ -77,8 +96,10 @@ end subroutine help_usage
 !!    rand -i 0 100 -n 1
 !!    # randomly select xterm(1) color
 !!    xterm -bg `rand -e green black gray blue -n 1`
+!!
 !!##AUTHOR
 !!    John S. Urban
+!!
 !!##LICENSE
 !!    Public Domain
 subroutine help_version(l_version)
@@ -98,7 +119,7 @@ help_text=[ CHARACTER(LEN=128) :: &
 '@(#)AUTHOR:         John S. Urban>',&
 '@(#)LICENSE:        Public Domain. This is free software: you are free to change and redistribute it.>',&
 '@(#)                There is NO WARRANTY, to the extent permitted by law.>',&
-'@(#)COMPILED:       2022-01-08 17:38:41 UTC-300>',&
+'@(#)COMPILED:       2022-01-08 17:47:22 UTC-300>',&
 '']
    WRITE(*,'(a)')(trim(help_text(i)(5:len_trim(help_text(i))-1)),i=1,size(help_text))
    stop ! if --version was specified, stop
