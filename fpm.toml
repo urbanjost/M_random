@@ -10,7 +10,6 @@ auto-tests = true
 auto-examples = true
 [install]
 library = false
-[dependencies]
 
 [[executable]]
 name="rand"
