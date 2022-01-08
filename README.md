@@ -51,19 +51,20 @@ program that exercise the routine.
 
 ### USER
 ![manpages](docs/images/manpages.gif)
-   - There are man-pages in the repository download in the docs/ directory
-     that may be installed on ULS (Unix-Like Systems).
 
-   + [manpages.zip](https://urbanjost.github.io/M_random/manpages.zip)
-   + [manpages.tgz](https://urbanjost.github.io/M_random/manpages.tgz)
+   - A single page that uses javascript to combine all the HTML
+     descriptions of the man-pages is at 
+     [BOOK_M_random](https://urbanjost.github.io/M_random/BOOK_M_random.html).
 
    - a simple index to the man-pages in HTML form for the
    [routines](https://urbanjost.github.io/M_random/man3.html) 
    and [programs](https://urbanjost.github.io/M_random/man1.html) 
 
-   - A single page that uses javascript to combine all the HTML
-     descriptions of the man-pages is at 
-     [BOOK_M_random](https://urbanjost.github.io/M_random/BOOK_M_random.html).
+   - There are man-pages in the repository download in the docs/ directory
+     that may be installed on ULS (Unix-Like Systems).
+
+   + [manpages.zip](https://urbanjost.github.io/M_random/manpages.zip)
+   + [manpages.tgz](https://urbanjost.github.io/M_random/manpages.tgz)
 
    - [CHANGELOG](docs/CHANGELOG.md) provides a history of significant changes
 
