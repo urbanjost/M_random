@@ -909,7 +909,7 @@ type(mtprng_state), intent(out) :: state
    key_length = size(init_key)
 
    do k = max(N,key_length), 0, -1
-      state%mt(i) = ieor(state%mt(i),(ieor(state%mt(i-1),ishft(state%mt(i-1),-30_INT64) * 1664525_INT64))) + init_key(j) + j
+      state%mt(i) = ieor(state%mt(i),(ieor(state%mt(i-1),ishft(state%mt(i-1),-30_INT64) * 1664525_INT64))) + init_key(j+1) + j
 
       i = i + 1
       j = j + 1

@@ -11,4 +11,26 @@ auto-examples = true
 [install]
 library = false
 [dependencies]
-M_msg          = { git = "https://github.com/urbanjost/M_msg.git" }
+
+[[executable]]
+name="rand"
+source-dir="app"
+main="rand.f90"
+
+[[executable]]
+name="xauth_key"
+source-dir="app"
+main="xauth_key.f90"
+
+[executable.dependencies]
+M_io       =  {  git  =  "https://github.com/urbanjost/M_io.git"       }
+M_strings  =  {  git  =  "https://github.com/urbanjost/M_strings.git"  }
+M_kracken  =  {  git  =  "https://github.com/urbanjost/M_kracken.git"  }
+
+#[[test]]
+#name="test_suite"
+#source-dir="test"
+#main="test_suite_M_random.f90"
+
+[test.dependencies]
+M_msg  =  {  git  =  "https://github.com/urbanjost/M_msg.git"  }
