@@ -35,8 +35,8 @@ program that exercise the routine.
    ```bash
         git clone https://github.com/urbanjost/M_random.git
         cd M_random
-        fpm run
-        fpm run --example
+        fpm run "*"
+        fpm run --example "*"
         fpm test
    ```
 
