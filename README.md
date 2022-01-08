@@ -20,6 +20,9 @@
    & mtprng_rand_real2, mtprng_rand_real3
 ```
 ## DESCRIPTION
+  The M_random(3fm) module contains routines to support random number
+  generation. This includes supplements for the Fortran intrinsic
+  random_seed(3f).
 
 ## BUILDING THE MODULE USING make(1) ![gmake](docs/images/gnu.gif)
      git clone https://github.com/urbanjost/M_random.git
