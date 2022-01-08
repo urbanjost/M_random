@@ -3,7 +3,21 @@
    (LICENSE:)
 ## SYNOPSIS
 ```text
-       use M_random, only : 
+   use M_random, only: init_random_seed_by_system_clock
+   use M_random, only: init_random_seed_by_dat
+   use M_random, only: init_random_seed
+   
+   use M_random, only: random_string
+   use M_random, only: random_hex
+   use M_random, only: random_int
+   
+   use M_random, only: random_kiss64
+   use M_random, only: scramble
+   
+   use M_random, only: mtprng_state, mtprng_init, mtprng_init_by_array, &
+   & mtprng_rand64, mtprng_rand
+   use M_random, only: mtprng_rand_range, mtprng_rand_real1, &
+   & mtprng_rand_real2, mtprng_rand_real3
 ```
 ## DESCRIPTION
 
@@ -46,7 +60,6 @@ program that exercise the routine.
         [dependencies]
         M_random        = { git = "https://github.com/urbanjost/M_random.git" }
 ```
-
 ## DOCUMENTATION
 
 ### USER
