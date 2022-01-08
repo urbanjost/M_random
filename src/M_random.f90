@@ -155,7 +155,7 @@ character(len=:),allocatable    :: out
    integer                      :: i
    ilen=len(chars)
    out=''
-   call init_random_seed(3f)
+   call init_random_seed_by_dat()
    if(ilen.gt.0)then
       do i=1,length
          call random_number(x)
