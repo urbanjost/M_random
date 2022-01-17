@@ -20,7 +20,7 @@
    & mtprng_rand_real2, mtprng_rand_real3
 ```
 ## DESCRIPTION
-  The M_random(3fm) module contains routines to support random number
+  The M_random(3fm) module contains routines to support pseudorandom number
   generation. This includes supplements for the Fortran intrinsic
   random_seed(3f).
 
