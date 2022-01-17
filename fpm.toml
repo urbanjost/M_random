@@ -1,9 +1,15 @@
+# TOML file for fpm as described at https://github.com/fortran-lang/fpm/blob/master/manifest-reference.md
 name = "M_random"
 version = "0.1.0"
-license = "license"
-author = "Jane Doe"
-maintainer = "jane.doe@example.com"
-copyright = "Copyright 2021, Jane Doe"
+license = "MIT"
+author = ["John S. Urban"]
+maintainer = "urbanjost@comcast.com"
+copyright = "Copyright 2021, John S. Urban"
+description = "pseudorandom generators"
+categories = ["random"]
+keywords = ["random", "pseudorandom", "fortran", "rng", "random-number-generator" ]
+homepage = "https://github.com/urbanjost/M_random.git"
+
 [build]
 auto-executables = true
 auto-tests = true

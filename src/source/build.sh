@@ -13,4 +13,5 @@ GPF_build_module M_random
 )
 cp ../../docs/man3.html ../../docs/index.html
 cp ../../docs/BOOK_M_random.html ../../docs/index.html
+ccall ../../test/test_suite_M_random.[fF]90
 exit
