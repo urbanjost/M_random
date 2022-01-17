@@ -1,9 +1,9 @@
 !===================================================================================================================================
 !()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()!
 !===================================================================================================================================
-$BLOCK HELP --file rand.1.man
+$BLOCK HELP --file rand.1m_random.man
 NAME
-   rand - [FUNIX] generate pseudo-random permutations of file lines, whole
+   rand - [M_random] generate pseudo-random permutations of file lines, whole
    numbers, or strings 
    (LICENSE:PD)
 
