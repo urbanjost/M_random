@@ -12,7 +12,7 @@ stopit=.false.
 if(l_help)then
 help_text=[ CHARACTER(LEN=128) :: &
 'NAME                                                                                                                            ',&
-'   rand - [FUNIX] generate pseudo-random permutations of file lines, whole                                                      ',&
+'   rand - [M_rand] generate pseudo-random permutations of file lines, whole                                                     ',&
 '   numbers, or strings                                                                                                          ',&
 '   (LICENSE:PD)                                                                                                                 ',&
 '                                                                                                                                ',&
