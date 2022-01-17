@@ -66,7 +66,6 @@ program that exercise the routine.
 ## DOCUMENTATION
 
 ### USER
-![manpages](docs/images/manpages.gif)
 
    - A single page that uses javascript to combine all the HTML
      descriptions of the man-pages is at 
@@ -76,7 +75,9 @@ program that exercise the routine.
    [routines](https://urbanjost.github.io/M_random/man3.html) 
    and [programs](https://urbanjost.github.io/M_random/man1.html) 
 
-   - There are man-pages in the repository download in the docs/ directory
+   - ![manpages](docs/images/manpages.gif)
+
+     There are man-pages in the repository download in the docs/ directory
      that may be installed on ULS (Unix-Like Systems).
 
    + [manpages.zip](https://urbanjost.github.io/M_random/manpages.zip)
