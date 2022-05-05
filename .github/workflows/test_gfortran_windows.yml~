@@ -33,6 +33,7 @@ jobs:
            uname -a
            curl https://raw.githubusercontent.com/urbanjost/index/main/bootstrap/fpm.F90 --output fpm.F90
            gfortran fpm.F90 -o fpm
+           ls -l
 
     - name: Display environment
       run: |
