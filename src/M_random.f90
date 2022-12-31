@@ -9,23 +9,28 @@
 !!
 !!   See the routines:
 !!
-!!    use M_random, only : init_random_seed_by_system_clock, init_random_seed_by_dat, init_random_seed
+!!    use M_random, only : init_random_seed_by_system_clock, &
+!!    & init_random_seed_by_dat, init_random_seed
 !!    use M_random, only : random_string, random_hex, random_int
 !!    use M_random, only : random_kiss64
-!!    use M_random, only : mtprng_state, mtprng_init_array, mtprng_rand64, mtprng_rand_real1
+!!    use M_random, only : mtprng_state, mtprng_init_array, mtprng_rand64, &
+!!    & mtprng_rand_real1
 !!    use M_random, only : mtprng_int, mtprng_int_by_array
 !!    use M_random, only : mtprng_rand64, mtprng_rand, mtprng_rand_range
-!!    use M_random, only : mtprng_rand_real3, mtprng_rand_real2, mtprng_rand_real1
+!!    use M_random, only : mtprng_rand_real3, mtprng_rand_real2, &
+!!    & mtprng_rand_real1
 !!    use M_random, only : scramble
 !!
 !!##QUOTE
 !!
-!!   The generation of random numbers is too important to be left to chance -- Robert R. Coveyou
+!!   The generation of random numbers is too important to be left to chance
+!!   -- Robert R. Coveyou
 !!
 !!##DESCRIPTION
 !!
-!!    The M_random(3fm) module contains routines to support random number generation. This includes
-!!    supplements for the Fortran intrinsic random_seed(3f).
+!!    The M_random(3fm) module contains routines to support random number
+!!    generation. This includes supplements for the Fortran intrinsic
+!!    random_seed(3f).
 !!
 !!   SUPPLEMENTING INTRINSIC RANDOM_SEED
 !!    o init_random_seed_by_system_clock(3f): initialize random_number(3f) to return a single value with system clock
@@ -150,6 +155,7 @@ character(len=:),allocatable    :: out
    integer                      :: i
    ilen=len(chars)
    out=''
+   call init_random_seed_by_dat()
    if(ilen.gt.0)then
       do i=1,length
          call random_number(x)
@@ -243,7 +249,8 @@ end function random_hex
 !!   Sample program
 !!
 !!    program demo_random_int
-!!    use M_random, only : random_int
+!!    use M_random, only : random_int, init_random_seed_by_system_clock
+!!    call init_random_seed_by_system_clock()
 !!    write(*,'(*(i0:,1x))')(random_int(1,10),i=1,20)
 !!    write(*,'(*(i0:,1x))')(random_int(-5,5),i=1,20)
 !!    end program demo_random_int
@@ -269,6 +276,7 @@ logical,save         :: called=.false.
    if(.not.called)then
    ! initialize seed
       call random_seed(size = n)
+      if(allocated(seed))deallocate(seed)
       allocate(seed(n))
       call random_seed(get=seed)
       called=.true.
@@ -282,6 +290,7 @@ logical,save         :: called=.false.
    call random_number(rand_val)
    ! use random value to choose an integer from first to last
    rand_int = first + floor((last-first+1)*rand_val)
+   if(allocated(seed))deallocate(seed)
 end function random_int
 !==================================================================================================================================!
 !()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()!
@@ -325,7 +334,7 @@ end function random_int
 !!   Sample program
 !!
 !!     program demo_scramble
-!!     use M_random, only : scramble
+!!     use M_random, only : scramble, init_random_seed_by_system_clock
 !!     implicit none
 !!     character(len=*),parameter :: list(*)=[character(len=5) :: &
 !!     & 'one','two','three','four','five',&
@@ -333,6 +342,7 @@ end function random_int
 !!     integer                    :: i
 !!     integer                    :: n=size(list)
 !!     character(len=len(list))   :: newlist(size(list))
+!!     call init_random_seed_by_system_clock()
 !!     do i = 1,8
 !!        ! use random values as indices to randomize array
 !!        newlist=list(scramble(n))
@@ -441,7 +451,7 @@ function random_kiss64()
 !
 ! Revised on April 14, 2010 21:40:44 by Jason Blevins (75.178.9.182)
 ! This version was modified by Jason Blevins to use "implicit none"
-! and to portably declare the 64-bit/eight-byte integer type.
+! and to declare the 64-bit/eight-byte integer type in a portable manner.
 !-----------------------------------------------------------------------------------------------------------------------------------
    integer, parameter         :: i8b = selected_int_kind(18)  ! eight-byte integer
    integer(i8b), save         :: x, y, z, c
@@ -521,13 +531,13 @@ subroutine init_random_seed_by_system_clock()
    integer :: i, n, clock
    integer, dimension(:), allocatable :: seed
    call random_seed(size = n)
+   if(allocated(seed))deallocate(seed)
    allocate(seed(n))
    call system_clock(count=clock)
    seed = clock + 37 * (/ (i - 1, i = 1, n) /)
 !   write(*,*)seed
 !   write(*,*)(/ (i - 1, i = 1, n) /)
    call random_seed(put = seed)
-
    deallocate(seed)
 end subroutine init_random_seed_by_system_clock
 !==================================================================================================================================!
@@ -593,6 +603,7 @@ subroutine init_random_seed_by_dat()
   v(2) = ival(6) + 64*ival(5)                     ! skip value(4) because it is the timezone, which is typically constant
   v(3) = ival(3) + 32*ival(2) + 32*8*ival(1)
   call random_seed(size=n)
+  if(allocated(seed))deallocate(seed)
   allocate(seed(n))
   call random_seed()                              ! give the seed an implementation-dependent kick
   call random_seed(get=seed)
@@ -668,6 +679,7 @@ integer,intent(in) :: mine
    integer         :: i, n
    integer, dimension(:), allocatable :: seed
    call random_seed(size = n)
+   if(allocated(seed))deallocate(seed)
    allocate(seed(n))
    seed = mine + 37 * (/ (i - 1, i = 1, n) /)
   !write(*,*)seed
@@ -730,6 +742,11 @@ end subroutine init_random_seed
 !
 !  If you modify this file, you may insert additional notices
 !  immediately following this sentence.
+!
+!  Copyright 2019, John S. Urban
+!  corrected subscript causing undersubscripting the seed array and
+!  reformatted to conform to more recent Fortran structures and added
+!  man pages.
 !
 !  Copyright 2001, 2002, 2004 Scott Robert Ladd.
 !  All rights reserved, except as noted herein.
@@ -901,7 +918,7 @@ type(mtprng_state), intent(out) :: state
    key_length = size(init_key)
 
    do k = max(N,key_length), 0, -1
-      state%mt(i) = ieor(state%mt(i),(ieor(state%mt(i-1),ishft(state%mt(i-1),-30_INT64) * 1664525_INT64))) + init_key(j) + j
+      state%mt(i) = ieor(state%mt(i),(ieor(state%mt(i-1),ishft(state%mt(i-1),-30_INT64) * 1664525_INT64))) + init_key(j+1) + j
 
       i = i + 1
       j = j + 1

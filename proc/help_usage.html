@@ -90,7 +90,7 @@
           <li id="statements"><i class="fa fa-list-ol"></i>
             <a data-toggle="tooltip"
                data-placement="bottom" data-html="true"
-               title=" 3.0% of total for procedures.">14 statements</a>
+               title=" 3.1% of total for procedures.">14 statements</a>
           </li>
 
             <li id="source-file">
@@ -354,7 +354,7 @@ parameter
 <span class="k">if</span><span class="p">(</span><span class="n">l_help</span><span class="p">)</span><span class="k">then</span>
 <span class="n">help_text</span><span class="o">=</span><span class="p">[</span><span class="w"> </span><span class="kt">CHARACTER</span><span class="p">(</span><span class="nb">LEN</span><span class="o">=</span><span class="mi">128</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="p">&amp;</span><span class="w"></span>
 <span class="s1">&#39;NAME                                                                                                                            &#39;</span><span class="p">,&amp;</span><span class="w"></span>
-<span class="s1">&#39;   rand - [M_rand] generate pseudo-random permutations of file lines, whole                                                     &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;   rand - [M_random] generate pseudo-random permutations of file lines, whole                                                   &#39;</span><span class="p">,&amp;</span><span class="w"></span>
 <span class="s1">&#39;   numbers, or strings                                                                                                          &#39;</span><span class="p">,&amp;</span><span class="w"></span>
 <span class="s1">&#39;   (LICENSE:PD)                                                                                                                 &#39;</span><span class="p">,&amp;</span><span class="w"></span>
 <span class="s1">&#39;                                                                                                                                &#39;</span><span class="p">,&amp;</span><span class="w"></span>
@@ -366,7 +366,7 @@ parameter
 <span class="s1">&#39;   rand -i LO-HI   [ -n]                                                                                                        &#39;</span><span class="p">,&amp;</span><span class="w"></span>
 <span class="s1">&#39;                                                                                                                                &#39;</span><span class="p">,&amp;</span><span class="w"></span>
 <span class="s1">&#39;DESCRIPTION                                                                                                                     &#39;</span><span class="p">,&amp;</span><span class="w"></span>
-<span class="s1">&#39;   Generates pseudo=random permutations, similar to the shuf(1) command.                                                        &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;   Generates pseudorandom permutations, similar to the shuf(1) command.                                                         &#39;</span><span class="p">,&amp;</span><span class="w"></span>
 <span class="s1">&#39;   Writes pseudo-random permutations of:                                                                                        &#39;</span><span class="p">,&amp;</span><span class="w"></span>
 <span class="s1">&#39;                                                                                                                                &#39;</span><span class="p">,&amp;</span><span class="w"></span>
 <span class="s1">&#39;   o the lines in a file                                                                                                        &#39;</span><span class="p">,&amp;</span><span class="w"></span>
@@ -386,8 +386,15 @@ parameter
 <span class="s1">&#39;                                                                                                                                &#39;</span><span class="p">,&amp;</span><span class="w"></span>
 <span class="s1">&#39;   # generate a random number from 0 to 100                                                                                     &#39;</span><span class="p">,&amp;</span><span class="w"></span>
 <span class="s1">&#39;   rand -i 0 100 -n 1                                                                                                           &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;                                                                                                                                &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;   # randomly pick a line from a file                                                                                           &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;   rand -n 1 MYFILE.TXT                                                                                                         &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;                                                                                                                                &#39;</span><span class="p">,&amp;</span><span class="w"></span>
 <span class="s1">&#39;   # randomly select xterm(1) color                                                                                             &#39;</span><span class="p">,&amp;</span><span class="w"></span>
 <span class="s1">&#39;   xterm -bg `rand -e green black gray blue -n 1`                                                                               &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;                                                                                                                                &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;   # randomly sleep 10 to 30 seconds                                                                                            &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;   sleep `rand 10 30 -n 1`                                                                                                      &#39;</span><span class="p">,&amp;</span><span class="w"></span>
 <span class="s1">&#39;                                                                                                                                &#39;</span><span class="p">,&amp;</span><span class="w"></span>
 <span class="s1">&#39;AUTHOR                                                                                                                          &#39;</span><span class="p">,&amp;</span><span class="w"></span>
 <span class="s1">&#39;   John S. Urban                                                                                                                &#39;</span><span class="p">,&amp;</span><span class="w"></span>
@@ -420,7 +427,7 @@ parameter
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2022-12-31 17:17            </p>
+ on 2022-12-31 19:43            </p>
         </div>
       </div>
       <br>
