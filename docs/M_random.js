@@ -16,4 +16,6 @@ append("random_int.3m_random.html");
 append("random_kiss64.3m_random.html");
 append("random_string.3m_random.html");
 append("scramble.3m_random.html");
+append("rand.1m_random.html");
+append("xauth_key.1m_random.html");
 }

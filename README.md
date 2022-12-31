@@ -24,7 +24,11 @@
   generation. This includes supplements for the Fortran intrinsic
   random_seed(3f).
 
-## BUILDING THE MODULE USING make(1) ![gmake](docs/images/gnu.gif)
+---
+![gmake](docs/images/gnu.gif)
+---
+
+## BUILDING THE MODULE USING make(1)
      git clone https://github.com/urbanjost/M_random.git
      cd M_random/src
      # change Makefile if not using one of the listed compilers
@@ -44,7 +48,11 @@
 This will compile the Fortran module and basic example
 program that exercise the routine.
 
-## BUILD and TEST with FPM ![-](docs/images/fpm_logo.gif)
+---
+![-](docs/images/fpm_logo.gif)
+---
+
+## BUILD and TEST with FPM
 
    Alternatively, download the github repository and build it with
    fpm ( as described at [Fortran Package Manager](https://github.com/fortran-lang/fpm) )
@@ -63,6 +71,10 @@ program that exercise the routine.
         [dependencies]
         M_random        = { git = "https://github.com/urbanjost/M_random.git" }
 ```
+---
+![docs](docs/images/docs.gif)
+---
+
 ## DOCUMENTATION
 
 ### USER
@@ -75,7 +87,7 @@ program that exercise the routine.
    [routines](https://urbanjost.github.io/M_random/man3.html) 
    and [programs](https://urbanjost.github.io/M_random/man1.html) 
 
-   - ![manpages](docs/images/manpages.gif)
+   - ![man-pages](docs/images/manpages.gif)
 
      There are man-pages in the repository download in the docs/ directory
      that may be installed on ULS (Unix-Like Systems).

@@ -15,7 +15,7 @@ SYNOPSIS
    rand -i LO-HI   [ -n]
 
 DESCRIPTION
-   Generates pseudo=random permutations, similar to the shuf(1) command.
+   Generates pseudorandom permutations, similar to the shuf(1) command.
    Writes pseudo-random permutations of:
 
    o the lines in a file 
@@ -35,8 +35,15 @@ EXAMPLES
 
    # generate a random number from 0 to 100
    rand -i 0 100 -n 1
+
+   # randomly pick a line from a file
+   rand -n 1 MYFILE.TXT
+
    # randomly select xterm(1) color
-   xterm -bg `rand -e green black gray blue -n 1`
+   xterm -bg `rand green black gray blue -e -n 1`
+
+   # randomly sleep 10 to 30 seconds
+   sleep `rand 10 30 -n 1`
 
 AUTHOR
    John S. Urban
