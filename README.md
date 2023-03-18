@@ -1,7 +1,7 @@
-## NAME
+## Name
    M_random(3f) - a module of pseudo random procedures
    (LICENSE: See procedures, primarily MIT)
-## SYNOPSIS
+## Synopsis
 ```text
    use M_random, only: init_random_seed_by_system_clock
    use M_random, only: init_random_seed_by_dat
@@ -19,7 +19,7 @@
    use M_random, only: mtprng_rand_range, mtprng_rand_real1, &
    & mtprng_rand_real2, mtprng_rand_real3
 ```
-## DESCRIPTION
+## Description
   The M_random(3fm) module contains routines to support pseudorandom number
   generation. This includes supplements for the Fortran intrinsic
   random_seed(3f).
@@ -28,7 +28,7 @@
 ![gmake](docs/images/gnu.gif)
 ---
 
-## BUILDING THE MODULE USING make(1)
+## Building the Module using Make(1)
      git clone https://github.com/urbanjost/M_random.git
      cd M_random/src
      # change Makefile if not using one of the listed compilers
@@ -52,7 +52,7 @@ program that exercise the routine.
 ![-](docs/images/fpm_logo.gif)
 ---
 
-## BUILD and TEST with FPM
+## Build and Test with FPM
 
    Alternatively, download the github repository and build it with
    fpm ( as described at [Fortran Package Manager](https://github.com/fortran-lang/fpm) )
@@ -75,9 +75,9 @@ program that exercise the routine.
 ![docs](docs/images/docs.gif)
 ---
 
-## DOCUMENTATION
+## Documentation
 
-### USER
+### User
 
    - A single page that uses javascript to combine all the HTML
      descriptions of the man-pages is at 
@@ -97,7 +97,7 @@ program that exercise the routine.
 
    - [CHANGELOG](docs/CHANGELOG.md) provides a history of significant changes
 
-### DEVELOPER
+### Developer
    - [ford(1) output](https://urbanjost.github.io/M_random/fpm-ford/index.html).
 <!--
    - [doxygen(1) output](https://urbanjost.github.io/M_random/doxygen_out/html/index.html).
