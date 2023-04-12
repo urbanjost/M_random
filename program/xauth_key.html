@@ -99,7 +99,7 @@
           <li id="statements"><i class="fa fa-list-ol"></i>
             <a data-toggle="tooltip"
                data-placement="bottom" data-html="true"
-               title="13.2% of total for programs.">41 statements</a>
+               title="15.4% of total for programs.">55 statements</a>
           </li>
 
             <li id="source-file">
@@ -162,6 +162,7 @@
       </div>
       <div id="subs-0" class="panel-collapse collapse">
         <div class="list-group">
+            <a class="list-group-item" href="../program/xauth_key.html#proc-help_usage~2">help_usage</a>
             <a class="list-group-item" href="../program/xauth_key.html#proc-help_version~2">help_version</a>
         </div>
       </div>
@@ -193,53 +194,15 @@
       <ul class="list-group">
           <li class="list-group-item">
             <ul class="list-inline">
-                <li>M_kracken</li>
                 <li><a href='../module/m_random.html'>M_random</a></li>
+                <li>M_kracken</li>
             </ul>
           </li>
       </ul>
     </div>
 
-    <h2 id="name">NAME</h2>
-<div class="codehilite"><pre><span></span><code><span class="n">xauth_key</span><span class="p">(</span><span class="mi">1</span><span class="n">f</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="o">[</span><span class="n">M_random</span><span class="o">]</span><span class="w"> </span><span class="n">generate</span><span class="w"> </span><span class="n">magic</span><span class="w"> </span><span class="n">cookies</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">xauth</span><span class="w"></span>
-<span class="p">(</span><span class="nl">LICENSE</span><span class="p">:</span><span class="n">PD</span><span class="p">)</span><span class="w"></span>
-</code></pre></div>
+    
 
-<h2 id="synopsis">SYNOPSIS</h2>
-<div class="codehilite"><pre><span></span><code><span class="n">xauth_key</span><span class="w"> </span><span class="o">[</span><span class="n">characters</span><span class="o">]</span><span class="w"> </span><span class="o">[</span><span class="n"> -n number_of_characters</span><span class="o">]</span><span class="w"></span>
-</code></pre></div>
-
-<h2 id="description">DESCRIPTION</h2>
-<div class="codehilite"><pre><span></span><code><span class="nv">xauth_key</span> <span class="nv">generates</span> <span class="nv">a</span> <span class="k">random</span> <span class="nv">hexadecimal</span> <span class="nv">number</span>
-</code></pre></div>
-
-<h2 id="options">OPTIONS</h2>
-<div class="codehilite"><pre><span></span><code><span class="nv">characters</span>  <span class="nv">Set</span> <span class="nv">of</span> <span class="nv">letters</span> <span class="nv">to</span> <span class="nv">compose</span> <span class="nv">string</span> <span class="nv">from</span>.
-            <span class="nv">Defaults</span> <span class="nv">to</span> <span class="s1">&#39;</span><span class="s">0123456789abcdef</span><span class="s1">&#39;</span>.
-<span class="o">-</span><span class="nv">n</span> <span class="nv">N</span>        <span class="nv">Number</span> <span class="nv">of</span> <span class="nv">digits</span>. <span class="nv">Defaults</span> <span class="nv">to</span> <span class="mi">128</span>
-<span class="o">-</span><span class="nv">r</span> <span class="nv">N</span>        <span class="nv">Number</span> <span class="nv">of</span> <span class="nv">cookies</span> <span class="nv">to</span> <span class="nv">generate</span>
-<span class="o">--</span><span class="nv">version</span>   <span class="nv">Display</span> <span class="nv">version</span> <span class="nv">information</span> <span class="nv">and</span> <span class="k">exit</span>.
-<span class="o">--</span><span class="nv">help</span>      <span class="nv">Display</span> <span class="nv">help</span> <span class="nv">text</span> <span class="nv">and</span> <span class="k">exit</span>.
-</code></pre></div>
-
-<h2 id="example">EXAMPLE</h2>
-<div class="codehilite"><pre><span></span><code><span class="n">generate</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="k">value</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="k">use</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">X</span><span class="w"> </span><span class="n">authority</span><span class="w"> </span><span class="k">system</span><span class="o">:</span><span class="w"></span>
-
-<span class="w"> </span><span class="n">xauth</span><span class="w"> </span><span class="k">add</span><span class="w"> </span><span class="o">:</span><span class="mi">0</span><span class="w"> </span><span class="p">.</span><span class="w"> </span><span class="n n-Quoted">`xauth_key`</span><span class="w"></span>
-</code></pre></div>
-
-<h2 id="see-also">SEE ALSO</h2>
-<div class="codehilite"><pre><span></span><code>X(1), xauth(1)
-</code></pre></div>
-
-<h2 id="author">AUTHOR</h2>
-<div class="codehilite"><pre><span></span><code>John S. Urban
-</code></pre></div>
-
-<h2 id="license">LICENSE</h2>
-<div class="codehilite"><pre><span></span><code>Public Domain
-</code></pre></div>
-<br>
      <section class="visible-xs visible-sm hidden-md">
          <h3>Contents</h3>
   
@@ -278,6 +241,7 @@
       </div>
       <div id="subs-1" class="panel-collapse collapse">
         <div class="list-group">
+            <a class="list-group-item" href="../program/xauth_key.html#proc-help_usage~2">help_usage</a>
             <a class="list-group-item" href="../program/xauth_key.html#proc-help_version~2">help_version</a>
         </div>
       </div>
@@ -408,11 +372,51 @@
     <section>
     <h2>Subroutines</h2>
       <div class="panel panel-default">
-    <div class="panel-heading codesum"><span class="anchor" id="proc-help_version~2"></span><h3> subroutine <a href='../proc/help_version~2.html'>help_version</a>(l_version)  
+    <div class="panel-heading codesum"><span class="anchor" id="proc-help_usage~2"></span><h3> subroutine <a href='../proc/help_usage~2.html'>help_usage</a>(l_help)  
 </h3></div>
     <div class="panel-body">
           
   
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              logical,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>l_help</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+      <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-help_version~2"></span><h3> subroutine <a href='../proc/help_version~2.html'>help_version</a>(l_version)  
+</h3></div>
+    <div class="panel-body">
+          
+  <a href="../proc/help_version~2.html" class="pull-right"><emph>Read more&hellip;</emph></a>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -476,10 +480,78 @@
 <span class="w">   </span><span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">r</span><span class="w"></span>
 <span class="w">      </span><span class="n">out</span><span class="o">=</span><span class="n">random_string</span><span class="p">(</span><span class="n">chars</span><span class="p">,</span><span class="n">length</span><span class="p">)</span><span class="w"></span>
 <span class="w">      </span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="s1">&#39;(a)&#39;</span><span class="p">)</span><span class="n">out</span><span class="w"></span>
-<span class="w">   </span><span class="k">enddo</span><span class="w"></span>
-<span class="c">!-----------------------------------------------------------------------------------------------------------------------------------</span>
+<span class="w">   </span><span class="k">enddo</span>
+
 <span class="k">contains</span><span class="w"></span>
-<span class="c">!-----------------------------------------------------------------------------------------------------------------------------------</span>
+<span class="c">!===================================================================================================================================</span>
+<span class="c">!()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()!</span>
+<span class="c">!===================================================================================================================================</span>
+<span class="k">subroutine </span><span class="n">help_usage</span><span class="p">(</span><span class="n">l_help</span><span class="p">)</span><span class="w"></span>
+<span class="k">implicit none</span>
+<span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span><span class="k">parameter</span><span class="w">     </span><span class="kd">::</span><span class="w"> </span><span class="n">ident</span><span class="o">=</span><span class="s2">&quot;@(#)help_usage(3f): prints help information&quot;</span><span class="w"></span>
+<span class="kt">logical</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">             </span><span class="kd">::</span><span class="w"> </span><span class="n">l_help</span><span class="w"></span>
+<span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="p">:),</span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">help_text</span><span class="p">(:)</span><span class="w"></span>
+<span class="kt">integer</span><span class="w">                        </span><span class="kd">::</span><span class="w"> </span><span class="n">i</span><span class="w"></span>
+<span class="kt">logical</span><span class="w">                        </span><span class="kd">::</span><span class="w"> </span><span class="n">stopit</span><span class="o">=</span><span class="p">.</span><span class="n">false</span><span class="p">.</span><span class="w"></span>
+<span class="n">stopit</span><span class="o">=</span><span class="p">.</span><span class="n">false</span><span class="p">.</span><span class="w"></span>
+<span class="k">if</span><span class="p">(</span><span class="n">l_help</span><span class="p">)</span><span class="k">then</span>
+<span class="n">help_text</span><span class="o">=</span><span class="p">[</span><span class="w"> </span><span class="kt">CHARACTER</span><span class="p">(</span><span class="nb">LEN</span><span class="o">=</span><span class="mi">128</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="p">&amp;</span><span class="w"></span>
+<span class="s1">&#39;NAME                                                                            &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;   xauth_key(1f) - [M_random] generate magic cookies for xauth                  &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;   (LICENSE:PD)                                                                 &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;SYNOPSIS                                                                        &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;   xauth_key [characters] [ -n number_of_characters]                            &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;DESCRIPTION                                                                     &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;   xauth_key generates a random hexadecimal number                              &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;OPTIONS                                                                         &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;   characters  Set of letters to compose string from.                           &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;               Defaults to &#39;&#39;0123456789abcdef&#39;&#39;.                                &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;   -n N        Number of digits. Defaults to 128                                &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;   -r N        Number of cookies to generate                                    &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;   --version   Display version information and exit.                            &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;   --help      Display help text and exit.                                      &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;EXAMPLE                                                                         &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;   generate a value for use with the X authority system:                        &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;                                                                                &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;    xauth add :0 . `xauth_key`                                                  &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;SEE ALSO                                                                        &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;   X(1), xauth(1)                                                               &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;AUTHOR                                                                          &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;   John S. Urban                                                                &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;LICENSE                                                                         &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;   Public Domain                                                                &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;&#39;</span><span class="p">]</span><span class="w"></span>
+<span class="w">   </span><span class="k">WRITE</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="s1">&#39;(a)&#39;</span><span class="p">)(</span><span class="nb">trim</span><span class="p">(</span><span class="n">help_text</span><span class="p">(</span><span class="n">i</span><span class="p">)),</span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">size</span><span class="p">(</span><span class="n">help_text</span><span class="p">))</span><span class="w"></span>
+<span class="w">   </span><span class="k">stop</span><span class="w"> </span><span class="c">! if --help was specified, stop</span>
+<span class="k">endif</span>
+<span class="k">end subroutine </span><span class="n">help_usage</span><span class="w"></span>
+<span class="c">!&gt;</span>
+<span class="c">!!##NAME</span>
+<span class="c">!!    xauth_key(1f) - [M_random] generate magic cookies for xauth</span>
+<span class="c">!!    (LICENSE:PD)</span>
+<span class="c">!!##SYNOPSIS</span>
+<span class="c">!!</span>
+<span class="c">!!    xauth_key [characters] [ -n number_of_characters]</span>
+<span class="c">!!##DESCRIPTION</span>
+<span class="c">!!    xauth_key generates a random hexadecimal number</span>
+<span class="c">!!##OPTIONS</span>
+<span class="c">!!    characters  Set of letters to compose string from.</span>
+<span class="c">!!                Defaults to &#39;0123456789abcdef&#39;.</span>
+<span class="c">!!    -n N        Number of digits. Defaults to 128</span>
+<span class="c">!!    -r N        Number of cookies to generate</span>
+<span class="c">!!    --version   Display version information and exit.</span>
+<span class="c">!!    --help      Display help text and exit.</span>
+<span class="c">!!##EXAMPLE</span>
+<span class="c">!!</span>
+<span class="c">!!    generate a value for use with the X authority system:</span>
+<span class="c">!!</span>
+<span class="c">!!     xauth add :0 . `xauth_key`</span>
+<span class="c">!!##SEE ALSO</span>
+<span class="c">!!    X(1), xauth(1)</span>
+<span class="c">!!##AUTHOR</span>
+<span class="c">!!    John S. Urban</span>
+<span class="c">!!##LICENSE</span>
+<span class="c">!!    Public Domain</span>
 <span class="k">subroutine </span><span class="n">help_version</span><span class="p">(</span><span class="n">l_version</span><span class="p">)</span><span class="w"></span>
 <span class="k">implicit none</span>
 <span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span><span class="k">parameter</span><span class="w">     </span><span class="kd">::</span><span class="w"> </span><span class="n">ident</span><span class="o">=</span><span class="s2">&quot;@(#)help_version(3f): prints version information&quot;</span><span class="w"></span>
@@ -496,7 +568,7 @@
 <span class="s1">&#39;@(#)VERSION:        1.0, 20171219&gt;&#39;</span><span class="p">,&amp;</span><span class="w"></span>
 <span class="s1">&#39;@(#)AUTHOR:         John S. Urban&gt;&#39;</span><span class="p">,&amp;</span><span class="w"></span>
 <span class="s1">&#39;@(#)HOME PAGE:      http://www.urbanjost.altervista.org/index.html&gt;&#39;</span><span class="p">,&amp;</span><span class="w"></span>
-<span class="s1">&#39;@(#)COMPILED:       2022-01-19 08:14:27 UTC-300&gt;&#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;@(#)COMPILED:       2023-04-12 02:29:17 UTC-240&gt;&#39;</span><span class="p">,&amp;</span><span class="w"></span>
 <span class="s1">&#39;&#39;</span><span class="p">]</span><span class="w"></span>
 <span class="w">   </span><span class="k">WRITE</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="s1">&#39;(a)&#39;</span><span class="p">)(</span><span class="nb">trim</span><span class="p">(</span><span class="n">help_text</span><span class="p">(</span><span class="n">i</span><span class="p">)(</span><span class="mi">5</span><span class="p">:</span><span class="nb">len_trim</span><span class="p">(</span><span class="n">help_text</span><span class="p">(</span><span class="n">i</span><span class="p">))</span><span class="o">-</span><span class="mi">1</span><span class="p">)),</span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">size</span><span class="p">(</span><span class="n">help_text</span><span class="p">))</span><span class="w"></span>
 <span class="w">   </span><span class="k">stop</span><span class="w"> </span><span class="c">! if --version was specified, stop</span>
@@ -522,7 +594,7 @@
             <p class="text-right">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2023-03-18 10:05              </p>
+ on 2023-04-12 06:31              </p>
           </div>
         </div>
         <br>

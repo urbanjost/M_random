@@ -110,6 +110,7 @@
         </ul>
         <ol class="breadcrumb in-well text-right">
               <li><a href='../sourcefile/xauth_key.f90.html'>xauth_key.f90</a></li>
+              <li><a href='../program/xauth_key.html'>xauth_key</a></li>
           <li class="active">help_usage</li>
         </ol>
       </div>
@@ -363,30 +364,30 @@ parameter
 <span class="n">stopit</span><span class="o">=</span><span class="p">.</span><span class="n">false</span><span class="p">.</span><span class="w"></span>
 <span class="k">if</span><span class="p">(</span><span class="n">l_help</span><span class="p">)</span><span class="k">then</span>
 <span class="n">help_text</span><span class="o">=</span><span class="p">[</span><span class="w"> </span><span class="kt">CHARACTER</span><span class="p">(</span><span class="nb">LEN</span><span class="o">=</span><span class="mi">128</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="p">&amp;</span><span class="w"></span>
-<span class="s1">&#39;NAME                                                                                                                            &#39;</span><span class="p">,&amp;</span><span class="w"></span>
-<span class="s1">&#39;   xauth_key(1f) - [M_random] generate magic cookies for xauth                                                                  &#39;</span><span class="p">,&amp;</span><span class="w"></span>
-<span class="s1">&#39;   (LICENSE:PD)                                                                                                                 &#39;</span><span class="p">,&amp;</span><span class="w"></span>
-<span class="s1">&#39;SYNOPSIS                                                                                                                        &#39;</span><span class="p">,&amp;</span><span class="w"></span>
-<span class="s1">&#39;   xauth_key [characters] [ -n number_of_characters]                                                                            &#39;</span><span class="p">,&amp;</span><span class="w"></span>
-<span class="s1">&#39;DESCRIPTION                                                                                                                     &#39;</span><span class="p">,&amp;</span><span class="w"></span>
-<span class="s1">&#39;   xauth_key generates a random hexadecimal number                                                                              &#39;</span><span class="p">,&amp;</span><span class="w"></span>
-<span class="s1">&#39;OPTIONS                                                                                                                         &#39;</span><span class="p">,&amp;</span><span class="w"></span>
-<span class="s1">&#39;   characters  Set of letters to compose string from.                                                                           &#39;</span><span class="p">,&amp;</span><span class="w"></span>
-<span class="s1">&#39;               Defaults to &#39;&#39;0123456789abcdef&#39;&#39;.                                                                                &#39;</span><span class="p">,&amp;</span><span class="w"></span>
-<span class="s1">&#39;   -n N        Number of digits. Defaults to 128                                                                                &#39;</span><span class="p">,&amp;</span><span class="w"></span>
-<span class="s1">&#39;   -r N        Number of cookies to generate                                                                                    &#39;</span><span class="p">,&amp;</span><span class="w"></span>
-<span class="s1">&#39;   --version   Display version information and exit.                                                                            &#39;</span><span class="p">,&amp;</span><span class="w"></span>
-<span class="s1">&#39;   --help      Display help text and exit.                                                                                      &#39;</span><span class="p">,&amp;</span><span class="w"></span>
-<span class="s1">&#39;EXAMPLE                                                                                                                         &#39;</span><span class="p">,&amp;</span><span class="w"></span>
-<span class="s1">&#39;   generate a value for use with the X authority system:                                                                        &#39;</span><span class="p">,&amp;</span><span class="w"></span>
-<span class="s1">&#39;                                                                                                                                &#39;</span><span class="p">,&amp;</span><span class="w"></span>
-<span class="s1">&#39;    xauth add :0 . `xauth_key`                                                                                                  &#39;</span><span class="p">,&amp;</span><span class="w"></span>
-<span class="s1">&#39;SEE ALSO                                                                                                                        &#39;</span><span class="p">,&amp;</span><span class="w"></span>
-<span class="s1">&#39;   X(1), xauth(1)                                                                                                               &#39;</span><span class="p">,&amp;</span><span class="w"></span>
-<span class="s1">&#39;AUTHOR                                                                                                                          &#39;</span><span class="p">,&amp;</span><span class="w"></span>
-<span class="s1">&#39;   John S. Urban                                                                                                                &#39;</span><span class="p">,&amp;</span><span class="w"></span>
-<span class="s1">&#39;LICENSE                                                                                                                         &#39;</span><span class="p">,&amp;</span><span class="w"></span>
-<span class="s1">&#39;   Public Domain                                                                                                                &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;NAME                                                                            &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;   xauth_key(1f) - [M_random] generate magic cookies for xauth                  &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;   (LICENSE:PD)                                                                 &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;SYNOPSIS                                                                        &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;   xauth_key [characters] [ -n number_of_characters]                            &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;DESCRIPTION                                                                     &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;   xauth_key generates a random hexadecimal number                              &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;OPTIONS                                                                         &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;   characters  Set of letters to compose string from.                           &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;               Defaults to &#39;&#39;0123456789abcdef&#39;&#39;.                                &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;   -n N        Number of digits. Defaults to 128                                &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;   -r N        Number of cookies to generate                                    &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;   --version   Display version information and exit.                            &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;   --help      Display help text and exit.                                      &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;EXAMPLE                                                                         &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;   generate a value for use with the X authority system:                        &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;                                                                                &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;    xauth add :0 . `xauth_key`                                                  &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;SEE ALSO                                                                        &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;   X(1), xauth(1)                                                               &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;AUTHOR                                                                          &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;   John S. Urban                                                                &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;LICENSE                                                                         &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;   Public Domain                                                                &#39;</span><span class="p">,&amp;</span><span class="w"></span>
 <span class="s1">&#39;&#39;</span><span class="p">]</span><span class="w"></span>
 <span class="w">   </span><span class="k">WRITE</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="s1">&#39;(a)&#39;</span><span class="p">)(</span><span class="nb">trim</span><span class="p">(</span><span class="n">help_text</span><span class="p">(</span><span class="n">i</span><span class="p">)),</span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">size</span><span class="p">(</span><span class="n">help_text</span><span class="p">))</span><span class="w"></span>
 <span class="w">   </span><span class="k">stop</span><span class="w"> </span><span class="c">! if --help was specified, stop</span>
@@ -412,7 +413,7 @@ parameter
             <p class="text-right">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2023-03-18 10:05              </p>
+ on 2023-04-12 06:31              </p>
           </div>
         </div>
         <br>

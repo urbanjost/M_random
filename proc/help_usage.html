@@ -110,6 +110,7 @@
         </ul>
         <ol class="breadcrumb in-well text-right">
               <li><a href='../sourcefile/rand.f90.html'>rand.f90</a></li>
+              <li><a href='../program/rand.html'>rand</a></li>
           <li class="active">help_usage</li>
         </ol>
       </div>
@@ -363,55 +364,55 @@ parameter
 <span class="n">stopit</span><span class="o">=</span><span class="p">.</span><span class="n">false</span><span class="p">.</span><span class="w"></span>
 <span class="k">if</span><span class="p">(</span><span class="n">l_help</span><span class="p">)</span><span class="k">then</span>
 <span class="n">help_text</span><span class="o">=</span><span class="p">[</span><span class="w"> </span><span class="kt">CHARACTER</span><span class="p">(</span><span class="nb">LEN</span><span class="o">=</span><span class="mi">128</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="p">&amp;</span><span class="w"></span>
-<span class="s1">&#39;NAME                                                                                                                            &#39;</span><span class="p">,&amp;</span><span class="w"></span>
-<span class="s1">&#39;   rand - [M_random] generate pseudo-random permutations of file lines, whole                                                   &#39;</span><span class="p">,&amp;</span><span class="w"></span>
-<span class="s1">&#39;   numbers, or strings                                                                                                          &#39;</span><span class="p">,&amp;</span><span class="w"></span>
-<span class="s1">&#39;   (LICENSE:PD)                                                                                                                 &#39;</span><span class="p">,&amp;</span><span class="w"></span>
-<span class="s1">&#39;                                                                                                                                &#39;</span><span class="p">,&amp;</span><span class="w"></span>
-<span class="s1">&#39;SYNOPSIS                                                                                                                        &#39;</span><span class="p">,&amp;</span><span class="w"></span>
-<span class="s1">&#39;  syntax:                                                                                                                       &#39;</span><span class="p">,&amp;</span><span class="w"></span>
-<span class="s1">&#39;                                                                                                                                &#39;</span><span class="p">,&amp;</span><span class="w"></span>
-<span class="s1">&#39;   rand FILES(s)   [ -n]                                                                                                        &#39;</span><span class="p">,&amp;</span><span class="w"></span>
-<span class="s1">&#39;   rand STRINGS -e [ -n]                                                                                                        &#39;</span><span class="p">,&amp;</span><span class="w"></span>
-<span class="s1">&#39;   rand -i LO-HI   [ -n]                                                                                                        &#39;</span><span class="p">,&amp;</span><span class="w"></span>
-<span class="s1">&#39;                                                                                                                                &#39;</span><span class="p">,&amp;</span><span class="w"></span>
-<span class="s1">&#39;DESCRIPTION                                                                                                                     &#39;</span><span class="p">,&amp;</span><span class="w"></span>
-<span class="s1">&#39;   Generates pseudorandom permutations, similar to the shuf(1) command.                                                         &#39;</span><span class="p">,&amp;</span><span class="w"></span>
-<span class="s1">&#39;   Writes pseudo-random permutations of:                                                                                        &#39;</span><span class="p">,&amp;</span><span class="w"></span>
-<span class="s1">&#39;                                                                                                                                &#39;</span><span class="p">,&amp;</span><span class="w"></span>
-<span class="s1">&#39;   o the lines in a file                                                                                                        &#39;</span><span class="p">,&amp;</span><span class="w"></span>
-<span class="s1">&#39;   o a range of whole numbers                                                                                                   &#39;</span><span class="p">,&amp;</span><span class="w"></span>
-<span class="s1">&#39;   o a list of strings                                                                                                          &#39;</span><span class="p">,&amp;</span><span class="w"></span>
-<span class="s1">&#39;                                                                                                                                &#39;</span><span class="p">,&amp;</span><span class="w"></span>
-<span class="s1">&#39;OPTIONS                                                                                                                         &#39;</span><span class="p">,&amp;</span><span class="w"></span>
-<span class="s1">&#39;   FILES(s)   files to use as input                                                                                             &#39;</span><span class="p">,&amp;</span><span class="w"></span>
-<span class="s1">&#39;   -e         treat each ARG as an input line                                                                                   &#39;</span><span class="p">,&amp;</span><span class="w"></span>
-<span class="s1">&#39;   -i LO HI   treat each number LO through HI as an input line                                                                  &#39;</span><span class="p">,&amp;</span><span class="w"></span>
-<span class="s1">&#39;   -n         output at most COUNT lines (per file)                                                                             &#39;</span><span class="p">,&amp;</span><span class="w"></span>
-<span class="s1">&#39;   --help     display this help and exit                                                                                        &#39;</span><span class="p">,&amp;</span><span class="w"></span>
-<span class="s1">&#39;   --version  output version information and exit                                                                               &#39;</span><span class="p">,&amp;</span><span class="w"></span>
-<span class="s1">&#39;                                                                                                                                &#39;</span><span class="p">,&amp;</span><span class="w"></span>
-<span class="s1">&#39;EXAMPLES                                                                                                                        &#39;</span><span class="p">,&amp;</span><span class="w"></span>
-<span class="s1">&#39;  Sample usage:                                                                                                                 &#39;</span><span class="p">,&amp;</span><span class="w"></span>
-<span class="s1">&#39;                                                                                                                                &#39;</span><span class="p">,&amp;</span><span class="w"></span>
-<span class="s1">&#39;   # generate a random number from 0 to 100                                                                                     &#39;</span><span class="p">,&amp;</span><span class="w"></span>
-<span class="s1">&#39;   rand -i 0 100 -n 1                                                                                                           &#39;</span><span class="p">,&amp;</span><span class="w"></span>
-<span class="s1">&#39;                                                                                                                                &#39;</span><span class="p">,&amp;</span><span class="w"></span>
-<span class="s1">&#39;   # randomly pick a line from a file                                                                                           &#39;</span><span class="p">,&amp;</span><span class="w"></span>
-<span class="s1">&#39;   rand -n 1 MYFILE.TXT                                                                                                         &#39;</span><span class="p">,&amp;</span><span class="w"></span>
-<span class="s1">&#39;                                                                                                                                &#39;</span><span class="p">,&amp;</span><span class="w"></span>
-<span class="s1">&#39;   # randomly select xterm(1) color                                                                                             &#39;</span><span class="p">,&amp;</span><span class="w"></span>
-<span class="s1">&#39;   xterm -bg `rand -e green black gray blue -n 1`                                                                               &#39;</span><span class="p">,&amp;</span><span class="w"></span>
-<span class="s1">&#39;                                                                                                                                &#39;</span><span class="p">,&amp;</span><span class="w"></span>
-<span class="s1">&#39;   # randomly sleep 10 to 30 seconds                                                                                            &#39;</span><span class="p">,&amp;</span><span class="w"></span>
-<span class="s1">&#39;   sleep `rand 10 30 -n 1`                                                                                                      &#39;</span><span class="p">,&amp;</span><span class="w"></span>
-<span class="s1">&#39;                                                                                                                                &#39;</span><span class="p">,&amp;</span><span class="w"></span>
-<span class="s1">&#39;AUTHOR                                                                                                                          &#39;</span><span class="p">,&amp;</span><span class="w"></span>
-<span class="s1">&#39;   John S. Urban                                                                                                                &#39;</span><span class="p">,&amp;</span><span class="w"></span>
-<span class="s1">&#39;                                                                                                                                &#39;</span><span class="p">,&amp;</span><span class="w"></span>
-<span class="s1">&#39;LICENSE                                                                                                                         &#39;</span><span class="p">,&amp;</span><span class="w"></span>
-<span class="s1">&#39;   Public Domain                                                                                                                &#39;</span><span class="p">,&amp;</span><span class="w"></span>
-<span class="s1">&#39;                                                                                                                                &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;NAME                                                                            &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;   rand - [M_random] generate pseudo-random permutations of file lines, whole   &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;   numbers, or strings                                                          &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;   (LICENSE:PD)                                                                 &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;                                                                                &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;SYNOPSIS                                                                        &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;  syntax:                                                                       &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;                                                                                &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;   rand FILES(s)   [ -n]                                                        &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;   rand STRINGS -e [ -n]                                                        &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;   rand -i LO-HI   [ -n]                                                        &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;                                                                                &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;DESCRIPTION                                                                     &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;   Generates pseudorandom permutations, similar to the shuf(1) command.         &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;   Writes pseudo-random permutations of:                                        &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;                                                                                &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;   o the lines in a file                                                        &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;   o a range of whole numbers                                                   &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;   o a list of strings                                                          &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;                                                                                &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;OPTIONS                                                                         &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;   FILES(s)   files to use as input                                             &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;   -e         treat each ARG as an input line                                   &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;   -i LO HI   treat each number LO through HI as an input line                  &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;   -n         output at most COUNT lines (per file)                             &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;   --help     display this help and exit                                        &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;   --version  output version information and exit                               &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;                                                                                &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;EXAMPLES                                                                        &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;  Sample usage:                                                                 &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;                                                                                &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;   # generate a random number from 0 to 100                                     &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;   rand -i 0 100 -n 1                                                           &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;                                                                                &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;   # randomly pick a line from a file                                           &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;   rand -n 1 MYFILE.TXT                                                         &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;                                                                                &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;   # randomly select xterm(1) color                                             &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;   xterm -bg `rand green black gray blue -e -n 1`                               &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;                                                                                &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;   # randomly sleep 10 to 30 seconds                                            &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;   sleep `rand 10 30 -n 1`                                                      &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;                                                                                &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;AUTHOR                                                                          &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;   John S. Urban                                                                &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;                                                                                &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;LICENSE                                                                         &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;   Public Domain                                                                &#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="s1">&#39;                                                                                &#39;</span><span class="p">,&amp;</span><span class="w"></span>
 <span class="s1">&#39;&#39;</span><span class="p">]</span><span class="w"></span>
 <span class="w">   </span><span class="k">WRITE</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="s1">&#39;(a)&#39;</span><span class="p">)(</span><span class="nb">trim</span><span class="p">(</span><span class="n">help_text</span><span class="p">(</span><span class="n">i</span><span class="p">)),</span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">size</span><span class="p">(</span><span class="n">help_text</span><span class="p">))</span><span class="w"></span>
 <span class="w">   </span><span class="k">stop</span><span class="w"> </span><span class="c">! if --help was specified, stop</span>
@@ -437,7 +438,7 @@ parameter
             <p class="text-right">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2023-03-18 10:05              </p>
+ on 2023-04-12 06:31              </p>
           </div>
         </div>
         <br>
