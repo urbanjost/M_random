@@ -1,4 +1,31 @@
-$ifdef TESTPRG90
+program xauth_key
+use M_kracken, only : kracken, lget, iget, sget
+use M_random, only  : init_random_seed_by_dat
+use M_random, only  : random_string, random_hex
+implicit none
+intrinsic random_number
+integer :: length
+character(len=:),allocatable :: out
+character(len=:),allocatable :: chars
+integer                      :: i
+integer                      :: r
+   call kracken('key','-n 128 -r 1 -help .false. -version .false.') ! define command arguments, default values; crack command line
+   call help_usage(lget('key_help'))                           ! if -help option is present, display help text and exit
+   call help_version(lget('key_version'))                      ! if -version option is present, display version text and exit
+   length=iget('key_n')
+   r=iget('key_r')
+   chars=trim(sget('key_oo'))
+   if(chars.eq.'')then
+      chars='0123456789abcdef'
+   endif
+
+   call init_random_seed_by_dat()
+   do i=1,r
+      out=random_string(chars,length)
+      write(*,'(a)')out
+   enddo
+
+contains
 !===================================================================================================================================
 !()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()!
 !===================================================================================================================================
@@ -29,36 +56,6 @@ LICENSE
    Public Domain
 $BLOCK END
 $!@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-program xauth_key
-use M_kracken, only : kracken, lget, iget, sget
-use M_random, only  : init_random_seed_by_dat
-use M_random, only  : random_string, random_hex
-implicit none
-intrinsic random_number
-integer :: length
-character(len=:),allocatable :: out
-character(len=:),allocatable :: chars
-integer                      :: i
-integer                      :: r
-   call kracken('key','-n 128 -r 1 -help .false. -version .false.') ! define command arguments, default values; crack command line
-   call help_usage(lget('key_help'))                           ! if -help option is present, display help text and exit
-   call help_version(lget('key_version'))                      ! if -version option is present, display version text and exit
-   length=iget('key_n')
-   r=iget('key_r')
-   chars=trim(sget('key_oo'))
-   if(chars.eq.'')then
-      chars='0123456789abcdef'
-   endif
-
-   call init_random_seed_by_dat()
-   do i=1,r
-      out=random_string(chars,length)
-      write(*,'(a)')out
-   enddo
-!-----------------------------------------------------------------------------------------------------------------------------------
-contains
-!-----------------------------------------------------------------------------------------------------------------------------------
-$!@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 $BLOCK VERSION
 PRODUCT:        GPF (General Purpose Fortran) utilities and examples
 PROGRAM:        xauth_key(1)
@@ -69,30 +66,3 @@ HOME PAGE:      http://www.urbanjost.altervista.org/index.html
 $BLOCK END
 $!@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 end program xauth_key
-!===================================================================================================================================
-!()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()!
-!===================================================================================================================================
-$ENDIF
-$!@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-$ifdef PREP_TEST
-$!==================================================================================================================================
-$!()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()
-$!==================================================================================================================================
-
-   This begins the section that will be processed by prep. Typically it is called by
-
-      prep -system -i FILENAME
-
-   if $SYSTEM commands are trusted
-
- UNIT TEST OF xauth_key
-
-$SYSTEM goodbad xauth_key start -section 1
-
-        Execute program
-
-$SYSTEM xauth_key
-$!==================================================================================================================================
-$!()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()
-$!==================================================================================================================================
-$ENDIF
