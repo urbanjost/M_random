@@ -1,4 +1,4 @@
-# TOML file for fpm as described at https://github.com/fortran-lang/fpm/blob/master/manifest-reference.md
+# TOML file for fpm as described at https://fpm.fortran-lang.org/en/spec/manifest.html
 name = "M_random"
 version = "0.1.0"
 license = "MIT"
@@ -38,4 +38,4 @@ M_kracken  =  {  git  =  "https://github.com/urbanjost/M_kracken.git"  }
 #main="test_suite_M_random.f90"
 
 [test.dependencies]
-M_msg  =  {  git  =  "https://github.com/urbanjost/M_msg.git"  }
+M_framework  =  {  git  =  "https://github.com/urbanjost/M_framework.git"  }
