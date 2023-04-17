@@ -14,6 +14,8 @@ homepage = "https://github.com/urbanjost/M_random.git"
 auto-executables = true
 auto-tests = true
 auto-examples = true
+#module-naming = true
+
 [install]
 library = false
 
