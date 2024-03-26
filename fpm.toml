@@ -14,7 +14,7 @@ homepage = "https://github.com/urbanjost/M_random.git"
 auto-executables = true
 auto-tests = true
 auto-examples = true
-#module-naming = true
+module-naming = true
 
 [install]
 library = false
@@ -30,9 +30,9 @@ source-dir="app"
 main="xauth_key.f90"
 
 [executable.dependencies]
-M_io       =  {  git  =  "https://github.com/urbanjost/M_io.git"       }
-M_strings  =  {  git  =  "https://github.com/urbanjost/M_strings.git"  }
-M_kracken  =  {  git  =  "https://github.com/urbanjost/M_kracken.git"  }
+M_io       =  {  namespace = "GPF" }
+M_strings  =  {  namespace = "GPF" }
+M_kracken  =  {  namespace = "GPF" }
 
 #[[test]]
 #name="test_suite"
@@ -40,4 +40,4 @@ M_kracken  =  {  git  =  "https://github.com/urbanjost/M_kracken.git"  }
 #main="test_suite_M_random.f90"
 
 [test.dependencies]
-M_framework  =  {  git  =  "https://github.com/urbanjost/M_framework.git"  }
+M_framework = {namespace = "GPF"}
