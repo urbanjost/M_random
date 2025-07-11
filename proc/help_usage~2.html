@@ -81,15 +81,15 @@
 
             <li class="list-inline-item" id="source-file">
               <i class="fa fa-code"></i>
-              <a href="../src/xauth_key.f90"> Source File</a>
+              <a href="../src/rand.f90"> Source File</a>
             </li>
         </ul>
       </div>
       <div class="col">
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb justify-content-end mb-0">
-                <li class="breadcrumb-item"><a href='../sourcefile/xauth_key.f90.html'>xauth_key.f90</a></li>
-                <li class="breadcrumb-item"><a href='../program/xauth_key.html'>xauth_key</a></li>
+                <li class="breadcrumb-item"><a href='../sourcefile/rand.f90.html'>rand.f90</a></li>
+                <li class="breadcrumb-item"><a href='../program/rand.html'>rand</a></li>
             <li class="breadcrumb-item active" aria-current="page">help_usage</li>
           </ol>
         </nav>
@@ -117,7 +117,7 @@
       <div id="vars-0" class="collapse">
         <div class="list-group list-group-flush">
             <a class="list-group-item" href="../proc/help_usage~2.html#variable-help_text~3">help_text</a>
-            <a class="list-group-item" href="../proc/help_usage~2.html#variable-i~9">i</a>
+            <a class="list-group-item" href="../proc/help_usage~2.html#variable-i~25">i</a>
             <a class="list-group-item" href="../proc/help_usage~2.html#variable-ident~3">ident</a>
             <a class="list-group-item" href="../proc/help_usage~2.html#variable-stopit~3">stopit</a>
         </div>
@@ -224,7 +224,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-i~9"></span>
+              <span class="anchor" id="variable-i~25"></span>
               integer,
             </td>
               <td>public</td>
@@ -300,29 +300,54 @@ parameter
 <span class="k">if</span><span class="p">(</span><span class="n">l_help</span><span class="p">)</span><span class="k">then</span>
 <span class="n">help_text</span><span class="o">=</span><span class="p">[</span><span class="w"> </span><span class="kt">CHARACTER</span><span class="p">(</span><span class="nb">LEN</span><span class="o">=</span><span class="mi">128</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="p">&amp;</span>
 <span class="s1">&#39;NAME                                                                            &#39;</span><span class="p">,&amp;</span>
-<span class="s1">&#39;   xauth_key(1f) - [M_random] generate magic cookies for xauth                  &#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;   rand - [M_random] generate pseudo-random permutations of file lines, whole   &#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;   numbers, or strings                                                          &#39;</span><span class="p">,&amp;</span>
 <span class="s1">&#39;   (LICENSE:PD)                                                                 &#39;</span><span class="p">,&amp;</span>
-<span class="s1">&#39;SYNOPSIS                                                                        &#39;</span><span class="p">,&amp;</span>
-<span class="s1">&#39;   xauth_key [characters] [ -n number_of_characters]                            &#39;</span><span class="p">,&amp;</span>
-<span class="s1">&#39;DESCRIPTION                                                                     &#39;</span><span class="p">,&amp;</span>
-<span class="s1">&#39;   xauth_key generates a random hexadecimal number                              &#39;</span><span class="p">,&amp;</span>
-<span class="s1">&#39;OPTIONS                                                                         &#39;</span><span class="p">,&amp;</span>
-<span class="s1">&#39;   characters  Set of letters to compose string from.                           &#39;</span><span class="p">,&amp;</span>
-<span class="s1">&#39;               Defaults to &#39;&#39;0123456789abcdef&#39;&#39;.                                &#39;</span><span class="p">,&amp;</span>
-<span class="s1">&#39;   -n N        Number of digits. Defaults to 128                                &#39;</span><span class="p">,&amp;</span>
-<span class="s1">&#39;   -r N        Number of cookies to generate                                    &#39;</span><span class="p">,&amp;</span>
-<span class="s1">&#39;   --version   Display version information and exit.                            &#39;</span><span class="p">,&amp;</span>
-<span class="s1">&#39;   --help      Display help text and exit.                                      &#39;</span><span class="p">,&amp;</span>
-<span class="s1">&#39;EXAMPLE                                                                         &#39;</span><span class="p">,&amp;</span>
-<span class="s1">&#39;   generate a value for use with the X authority system:                        &#39;</span><span class="p">,&amp;</span>
 <span class="s1">&#39;                                                                                &#39;</span><span class="p">,&amp;</span>
-<span class="s1">&#39;    xauth add :0 . `xauth_key`                                                  &#39;</span><span class="p">,&amp;</span>
-<span class="s1">&#39;SEE ALSO                                                                        &#39;</span><span class="p">,&amp;</span>
-<span class="s1">&#39;   X(1), xauth(1)                                                               &#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;SYNOPSIS                                                                        &#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;  syntax:                                                                       &#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;                                                                                &#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;   rand FILES(s)   [ -n]                                                        &#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;   rand STRINGS -e [ -n]                                                        &#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;   rand -i LO-HI   [ -n]                                                        &#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;                                                                                &#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;DESCRIPTION                                                                     &#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;   Generates pseudorandom permutations, similar to the shuf(1) command.         &#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;   Writes pseudo-random permutations of:                                        &#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;                                                                                &#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;   o the lines in a file                                                        &#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;   o a range of whole numbers                                                   &#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;   o a list of strings                                                          &#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;                                                                                &#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;OPTIONS                                                                         &#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;   FILES(s)   files to use as input                                             &#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;   -e         treat each ARG as an input line                                   &#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;   -i LO HI   treat each number LO through HI as an input line                  &#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;   -n         output at most COUNT lines (per file)                             &#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;   --help     display this help and exit                                        &#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;   --version  output version information and exit                               &#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;                                                                                &#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;EXAMPLES                                                                        &#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;  Sample usage:                                                                 &#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;                                                                                &#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;   # generate a random number from 0 to 100                                     &#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;   rand -i 0 100 -n 1                                                           &#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;                                                                                &#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;   # randomly pick a line from a file                                           &#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;   rand -n 1 MYFILE.TXT                                                         &#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;                                                                                &#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;   # randomly select xterm(1) color                                             &#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;   xterm -bg `rand green black gray blue -e -n 1`                               &#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;                                                                                &#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;   # randomly sleep 10 to 30 seconds                                            &#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;   sleep `rand 10 30 -n 1`                                                      &#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;                                                                                &#39;</span><span class="p">,&amp;</span>
 <span class="s1">&#39;AUTHOR                                                                          &#39;</span><span class="p">,&amp;</span>
 <span class="s1">&#39;   John S. Urban                                                                &#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;                                                                                &#39;</span><span class="p">,&amp;</span>
 <span class="s1">&#39;LICENSE                                                                         &#39;</span><span class="p">,&amp;</span>
 <span class="s1">&#39;   Public Domain                                                                &#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;                                                                                &#39;</span><span class="p">,&amp;</span>
 <span class="s1">&#39;&#39;</span><span class="p">]</span>
 <span class="w">   </span><span class="k">WRITE</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="s1">&#39;(a)&#39;</span><span class="p">)(</span><span class="nb">trim</span><span class="p">(</span><span class="n">help_text</span><span class="p">(</span><span class="n">i</span><span class="p">)),</span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">size</span><span class="p">(</span><span class="n">help_text</span><span class="p">))</span>
 <span class="w">   </span><span class="k">stop</span><span class="w"> </span><span class="c">! if --help was specified, stop</span>
@@ -351,7 +376,7 @@ parameter
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2024-04-30 00:07              </p>
+ on 2024-04-30 00:08              </p>
           </div>
         </div>
         <br>
